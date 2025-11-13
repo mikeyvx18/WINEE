@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine Quality Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍷 Wine Quality Predictor</h1>
+    <p>Upload your trained ONNX model and test data to predict wine quality.</p>
+
+    <div class="upload-section">
+      <label for="modelInput" class="file-label">Upload ONNX Model</label>
+      <input type="file" id="modelInput" accept=".onnx">
+      
+      <label for="dataInput" class="file-label">Upload Test Data (CSV)</label>
+      <input type="file" id="dataInput" accept=".csv">
+
+      <button id="predictBtn">Run Prediction</button>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const predictBtn = document.getElementById('predictBtn');
+    const outputDiv = document.getElementById('output');
+
+    predictBtn.addEventListener('click', () => {
+      outputDiv.innerHTML = `
+        <p class="loading">🔄 Model loaded successfully!</p>
+        <p>Prediction functionality requires a backend (Python or ONNX.js).</p>
+        <p>For demo purposes, this site just hosts your model visually on GitHub Pages.</p>
+      `;
+    });
+  </script>
+</body>
+</html>
